@@ -16,4 +16,16 @@ public class Solution {
         }
         return -tmp_int;
     }
+
+    //calculate residual 
+    public int reverseIntegerRes(int number){
+        int res = 0;
+        int n = Math.abs(number);
+        while (n>0){
+            res *= 10;
+            res += n%10;
+            n /= 10;
+        }
+        return (int)x>=0? res:-res;
+    }
 }
