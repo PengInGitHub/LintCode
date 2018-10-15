@@ -11,6 +11,15 @@ class Solution:
     @param head: the first node of linked list.
     @return: An integer
     """
+    def countNode(self, head):
+        count = 0
+        while head:
+            head = head.next
+            count += 1
+        return count
+    
+
+    
     def countNodes(self, head):
         # write your code here
         tmp = head

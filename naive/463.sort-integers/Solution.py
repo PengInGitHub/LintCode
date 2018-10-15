@@ -3,6 +3,24 @@ class Solution:
     @param A: an integer array
     @return: nothing
     """
+    # quick
+    def sortIntegers1(self, A):
+        if len(A) < 2:
+            return A
+        smaller, equal, larger = [], [], []
+        pivot = A[0]
+        
+        for i in A:
+            if i < pivot:
+                smaller.append(i)
+            elif i == pivot:
+                equal.append(i)
+            else:
+                larger.append(i)
+        
+        return self.sortIntegers1(smaller) + equal + self.sortIntegers1(larger)
+
+
     #bubble sort
     def sortIntegers(self, A):
         # write your code here
@@ -20,6 +38,5 @@ class Solution:
                     A[j+1]=tmp
 
 solution = Solution()
-A = [3,5,2,4,1]
-solution.sortIntegers(A)
-print(A)
+A = [21, -4, -1, -1, 0, 900, 25, 6, 21, 14]
+print solution.sortIntegers1(A)

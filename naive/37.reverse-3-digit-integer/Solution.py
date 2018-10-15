@@ -22,6 +22,20 @@ class Solution:
         if number>=0:
             return res
         return -res
-
+    
+    def reverseIntStr2(self, number):
+        n_str = str(abs(number))
+        if number < 0:
+            return -int(n_str[::-1])
+        else:
+            return int(n_str[::-1])
+        
+    def reverseIntStr3(self, num):
+        if num > 0:
+            return int("".join(reversed(str(num))))
+        else:
+            return -int("".join(reversed(str(abs(num)))))
+    
+    
 sol = Solution()
-print sol.reverseIntStr(20)
+print sol.reverseIntStr3(-203)
