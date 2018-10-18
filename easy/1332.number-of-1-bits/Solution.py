@@ -20,3 +20,13 @@ class Solution:
 
     def hammingWeight(self, n):
         return bin(n).count('1')
+    
+        def hammingWeight1(self, n):
+        # write your code here
+        counter = 0
+        while n > 0:
+            if n%2 == 1:
+                counter += 1
+            n /= 2
+        return counter
+    
